@@ -1,0 +1,98 @@
+body{
+    font-family: 'Patrick Hand', cursive;
+    font-size: 2vw;
+    max-height: 100vh;
+    max-width: 99vw;
+}
+#container{
+    display: grid;
+    grid-template-rows: 1fr 8fr 1fr;
+    grid-template-columns: 1fr;  
+    height: 100vh;
+    overflow:hidden;
+    grid-gap: 1vh;
+    padding-right: 1vw;
+}
+#controls{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 2vh;
+}
+#matrix{
+    display: grid;
+    max-width: 99vw;
+    max-height: 78vh;
+    width:99vw;
+    height: 78vh;
+    justify-self: center;
+    grid-gap: 0vh;
+    z-index: 5;
+    position: relative;
+}
+#scores{
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 1fr 1fr ;
+    color: rgb(0, 140, 255);
+    box-sizing: border-box;
+}
+.score{
+    width: 25vw;
+}
+.player2Score{
+    color: #E6A57E;
+    justify-self: end;
+}
+.item{
+    border: 0.1vh solid black;
+    background-color:rgba(211, 211, 211, 0.212);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img{
+    height: 90%;
+    width: 90%;
+    background-color:rgba(211, 211, 211, 0.158);
+}
+.coin img{
+    height: 60%;
+    width: 60%;
+}
+.nothing img{
+    opacity: 0;
+}
+input{
+    border-radius: 1vh;
+}
+button{
+    border-radius: 1vh;
+    background-color: #E6A57E;
+}
+.win{
+    position: absolute;
+    z-index: 10;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    background-color: white;
+    height: 70%;
+    width: 60%;
+    align-items: center;
+    justify-items: center;
+    left: 0; 
+    right: 0;
+    top: 0; 
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto; 
+    margin-right: auto;
+    border-radius: 2vh;
+    background-image: linear-gradient(101deg, rgba(229,219,156,1) 0%, rgba(161,205,206,1) 50%, rgba(230,165,126,1) 100%);
+    font-size: 8vh;
+    font-family: 'Lobster Two', cursive;
+}
+.over{
+    text-align: center;
+    font-size: 10vh;
+}
