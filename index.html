@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <div id="controls">
+            <input type="text" id="rows" placeholder="columns">
+            <input type="text" id="columns" placeholder="rows">
+            <button id="start">Play</button>
+        </div>
+        <div id="matrix"></div>
+        <div id="scores"></div>
+    </div>
+
+    <script id="matrix-template" type="text/x-handlebars-template">
+        {{#each matrix}}
+            {{#each this}}
+                {{#ifCond this 'S'}}
+                    <div class="stone item"><img src="https://i.pinimg.com/736x/3d/a8/77/3da8779a4439f721c1b3cc0c389a1097.jpg" alt="police officer"></div>
+                {{/ifCond}}
+                {{#ifCond  this 'C'}}
+                    <div class="coin item"><img src="https://www.meme-arsenal.com/memes/830bef7f71cd6339c003906e0cb432c1.jpg" alt="money"></div>
+                {{/ifCond}}
+                {{#ifCond this '.'}}
+                    <div class="nothing item"><img src="https://lledogrupo.com/wp-content/uploads/2018/04/white-img.jpg" alt="nothing"></div>
+                {{/ifCond}}
+                {{#ifCond this 1}}
+                    <div class="player1 item"><img src="https://www.pngkey.com/png/detail/286-2861698_thief-robber-png-cartoon-burglar.png" alt="player 1"></div>
+                {{/ifCond}}
+                {{#ifCond this 2}}
+                    <div class="player2 item"><img src="https://www.pngkey.com/png/detail/286-2861698_thief-robber-png-cartoon-burglar.png" alt="player 2" style="transform: scaleX(-1)"></div>
+                {{/ifCond}}
+            {{/each}}
+        {{/each}}
+        <div class="win" style="display: none"></div>
+    </script>
+
+    <script id="scores-template" type="text/x-handlebars-template">
+        <div class="player1Score score">Player1 Score: {{score1}}</div>
+        <div class="player2Score score">Player2 Score: {{score2}}</div>
+    </script>
+
+    <script id="win-template" type="text/x-handlebars-template">
+        <div class="over">Game Over</div>
+        <div>Player {{player}} Wins</div>
+    </script>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="Renderer.js"></script>
+    <script src="Matrix.js"></script>
+    <script src="GoldRush.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
