@@ -11,6 +11,10 @@ A competition between two professional thieves to steal money unless a police of
 
 ## 📷 project Screenshots
 
+<img src="./start.png" width="70%"/>
+<img src="./game.png" width="70%"/>
+<img src="./tie.png" width="70%"/>
+<img src="./win.png" width="70%"/>
 
 ## 🌟 Features 
 
